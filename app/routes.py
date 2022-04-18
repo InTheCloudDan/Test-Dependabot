@@ -303,7 +303,7 @@ def environments():
     )
     url = url_parse(request.url)
     subdomain = url.host.split(".")[0]
-    if subdomain == "admin" and webhook:
+    if webhook:
         try:
             ld = LaunchDarklyApi(os.environ.get("LD_API_KEY"))
             project = ld.get_project(PROJECT_NAME)
